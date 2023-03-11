@@ -1,0 +1,41 @@
+###Crear
+POST http://localhost:5000/api/v1/superheros HTTP/1.1
+Content-Type: application/json
+
+{
+    "superhero":"Linterna verde",
+    "universe":"DC Comics",
+    "superpowers":["Manipular luz"],
+    "creators":["C1","C2"],
+    "address":{
+        "street":"Calle",
+        "city":"Villa Maria",
+        "state":"Caldas",
+        "country":"Colombia"
+    }
+}
+###Lista Todos
+GET http://localhost:5000/api/v1/superheros HTTP/1.1
+
+###Lista 1
+GET http://localhost:5000/api/v1/superheros/640c0ec1404daacbc1c5bbe9 HTTP/1.1
+
+###Actualizar
+PUT http://localhost:5000/api/v1/superheros/640c0ec1404daacbc1c5bbe9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "superpowers":["Dinero"]
+}
+
+###Eliminar 1
+DELETE http://localhost:5000/api/v1/superheros/640c137b404daacbc1c5bbf2 HTTP/1.1
+
+###Eliminar con filtro
+DELETE http://localhost:5000/api/v1/superheros HTTP/1.1
+
+### get por cantidad de superpoder
+GET http://localhost:5000/api/v1/superheros/superpowers/2 HTTP/1.1
+
+### get todos los superpoderes
+GET http://localhost:5000/api/v1/superheros/superpowers-list/superpowers HTTP/1.1
